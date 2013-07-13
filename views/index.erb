@@ -6,19 +6,44 @@
 			body {
 				background-color: black;
 			}
-			img {
+			img.global {
 				display: block;
 				margin-left: auto;
 				margin-right: auto;
+				width: 760px;
+			}
+			#news {
+				background-image: url('bg.jpg');
+				background-repeat: repeat-y;
+				width: 760px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			#newsitems img {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 500px;
+				padding: 30px;
 			}
 		</style>
 	</head>
 	<body>
-		<img src="header_final.jpg" alt="Cat Dead Detail Later" usemap="#headermap">
+		<img class="global" src="header_final.jpg" alt="Cat Dead Detail Later" usemap="#headermap">
 		
 		<map name="headermap">
-			<area shape="rect" coords="11,3,731,491" href="index.html" alt="Home">
+			<area shape="rect" coords="11,3,731,491" href="/" alt="Home">
 			<area shape="rect" coords="173,501,614,663" href="http://catdead.bigcartel.com/" alt="Store">
 		</map>
+		
+		<div id="news">
+			<div id="newsitems">
+				<% 1.upto(@num_files) do |file| %>
+					<%= "<img src=\"news_items/#{file}.jpg\">" %>
+				<% end %>
+			</div>
+		</div>
+		
+		<img class="global" src="footer_final.jpg" alt="Social Media">
 	</body>
 </html>
